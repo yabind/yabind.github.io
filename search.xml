@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[安装Zabbix监控软件]]></title>
+    <url>%2FLinux%E9%AB%98%E7%BA%A7%2F%E5%AE%89%E8%A3%85zabbix%E7%9B%91%E6%8E%A7%E8%BD%AF%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[Zabbix监控介绍 C/S架构，基于C++开发，监控中心支持web界面配置和管理 单server节点可以支持上万台客户端 最新版本4.0，官方文档：Zabbix官网 Zabbix包括5个组件 zabbix-server监控中心，接收客户端上报信息，负责配置、统计、操作数据 数据存储 存放数据，比如mysql web界面 也叫web UI，在web界面下操作配置zabbix简单易用的主要原因 zabbix-proxy 可选组件，它可以代替zabbix-server的功能，减轻server的压力 zabbix-agent 客户端软件，负责采集各个监控服务或者项目的数据，并上报 Zabbix监控流程图zabbix-release-3.2-1.el7.noarch.rpm 安装Zabbix上（服务端配置） 官网下载地址 阿铭在下载的时候地址是zabbix的index 123wget repo.zabbix.com/zabbix/3.2/rhel/7/x86_64/zabbix-release-3.2-1.el7.noarch.rpmrpm -ivh zabbix-release-3.2-1.el7.noarch.rpm #首先我们下载了zabbix的release的rpm包，然后安装zabbix的yum源仓库yum install -y zabbix-agent zabbix-get zabbix-server-mysql zabbix-web zabbix-web-mysql 会连带安装httpd和php 如果MySQL之前没有安装的话，需要根据lamp那一章的MySQL安装方法安装MySQL。一样也可以是使用yum安装mysql和mariadb vim /etc/my.cnf //需要增加配置 1character_set_server = utf8 重启MySQL服务后，进入MySQL命令行 1234#创建zabbix库create database zabbix character set utf8;#在创建用户grant all on zabbix.* to &apos;zabbix&apos;@&apos;127.0.0.1&apos; identified by &apos;guo123456&apos;; //(生产环境中如果为了提高效率你可以吧MySQL单装一台服务器)创建的用户IP地址为来源IP 导入数据 123cd /usr/share/doc/zabbix-server-mysql-3.2.7gzip -d create.sql.gzmysql -uroot -pgaoyidi zabbix &lt; create.sql 123456systemctl enable httpdsystemctl enable zabbix-serverchkconfig nginx offps -ef|grep zabbix //查看一下进程netstat -lntp zabbix //查看一下坚挺的端口less /var/log/zabbix/zabbix_server.log //zabbix错误日志路径 12345678910vim /etc/zabbix/zabbix_server.conf#搜索DBHost在#DBhost=localhost下面增加DBHost=127.0.0.1#搜索DBName在DBName=zabbix定义用户为zabbix(这里正好是默认的)#搜索DBPassword在DBUser=zabbix下面增加DBPassword=guo123456systemctl start zabbix-serversystemctl enable zabbix-servernetstat -lntp|grep zabbix //查看监听端口#浏览器访问http://ip/zabbinx web界面下面的配置zabbix#用户名Admin 密码zabbix#进入后台第一件事情就是修改密码 在浏览器里面输入IP/zabbix 点击Next step 是ok的就不用管出现fail的需要修改配置文件 这里出现的文件错误是让你设置时区 1234vim /etc/php.ini#搜索timezoen在;date.timezone = 增加date.timezone = Asia/Shanghaisystemctl restart httpd#重启服务之后在浏览器里面刷新 创建完成之后就是登入，默认用户是Admin，默认密码是zabbix。登入之后第一件事就是修改用户密码 点击Administration -&gt;点击Users -&gt; 点击Admin用户 -&gt; 点击Password处的Change password -&gt; 输入新的密码 ，你也可以修改中文语言点击Language选择Chinese （zh_CN），建议大家使用英文 -&gt; 点击update保存 下图就是zabbix的web界面 忘记Admin用户的密码怎么做 进入MySQL命令行，选择zabbix库 1mysql -uroot -pgaoyadi 123use zabbix;update users set passwd=md5(&apos;newpasswd&apos;) where alias=&apos;Admin&apos;;#这样就可以修改Admin用户的密码 下 （客户端配置） 在客户端上需要下载zabbix的yum源 123456789wget repo.zabbix.com/zabbix/3.2/rhel/7/x86_64/zabbix-release-3.2-1.el7.noarch.rpmrpm -ivh zabbix-release-3.2-1.el7.noarch.rpmyum install -y zabbix-agentvim /etc/zabbix/zabbix_agentd.conf //修改如下配置#搜索Server=127.0.0.1修改成Server=192.168.107.101 //定义服务端的ip（被动模式）#搜索ServerActive=127.0.0.1修改成ServerActive=192.168.107.101 //定义服务端ip（主动模式）#搜索Hostname=Zabbix server修改成Hostname=guo-123 //这是自定义的主机名，一会还需要在web界面下设置同样的主机名systemctl start zabbix-agentsystemctl enable zabbix-agent 主动模式和被动模式 主动或被动是相对客户端来讲的 被动模式：服务端会主动连接客户端获取监控项目数据，客户端被动地接受连接，并把监控信息传递给服务端 主动模式：客户端会主动吧监控数据汇报给服务端，服务端只负责接受即可 当客户端数量非常多时，建议使用主动模式，这样可以降低服务为的压力 服务端有公网ip。客户端只用内网ip，但却能连接外网，这种场景适合主动模式]]></content>
+      <categories>
+        <category>Linux高级</category>
+      </categories>
+      <tags>
+        <tag>Linux监控</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2Funcategorized%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <tags>
+        <tag>其他</tag>
+      </tags>
+  </entry>
+</search>
