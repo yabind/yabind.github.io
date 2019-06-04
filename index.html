@@ -327,7 +327,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/shell/shell判断/" itemprop="url">case判断</a></h1>
+                <a class="post-title-link" href="/shell/shell判断/" itemprop="url">shell判断</a></h1>
         
 
         <div class="post-meta">
@@ -355,8 +355,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-03T23:23:20+08:00">
-                2019-06-03
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-04T16:00:19+08:00">
+                2019-06-04
               </time>
             
           </span>
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  170
+                  762
                 </span>
               
 
@@ -431,7 +431,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -453,9 +453,11 @@
 
       
         
-          <h1 id="CASE判断"><a href="#CASE判断" class="headerlink" title="CASE判断"></a>CASE判断</h1><ul>
-<li><p>case格式</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">case VARIABLE NAME in</span><br><span class="line">	value1)</span><br><span class="line">	   COMMAND</span><br><span class="line">	   ;;</span><br><span class="line">	value2)</span><br><span class="line">   	   COMMAND</span><br><span class="line">	   ;;</span><br><span class="line">	*)</span><br><span class="line">       COMMAND</span><br><span class="line">	   ;;</span><br><span class="line">esac</span><br><span class="line">在case程序中，可以在条件中使用 | ，表示或的意思，比如</span><br><span class="line">	2|3)</span><br><span class="line">	   COMMAND</span><br><span class="line">	   ;;</span><br></pre></td></tr></table></figure>
+          <h1 id="shell脚本中的变量"><a href="#shell脚本中的变量" class="headerlink" title="shell脚本中的变量"></a>shell脚本中的变量</h1><ul>
+<li><p>当脚本中使用某个字符串较频繁并且字符串长度很长时就应该使用变量代替</p>
+</li>
+<li><p>使用条件语句时，常使用变量 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [[ condition ]]; then</span><br><span class="line"><span class="meta">	#</span>statements</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/shell/shell判断/#more" rel="contents">

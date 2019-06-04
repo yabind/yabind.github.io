@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="shell脚本,">
+  <meta name="keywords" content="shell-script,">
 
 
 
@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="CASE判断 case格式 123456789101112131415case VARIABLE NAME in	value1)	   COMMAND	   ;;	value2)   	   COMMAND	   ;;	*)       COMMAND	   ;;esac在case程序中，可以在条件中使用 | ，表示或的意思，比如	2|3)	   COMMAND	   ;;">
-<meta name="keywords" content="shell脚本">
+<meta name="description" content="shell脚本中的变量 当脚本中使用某个字符串较频繁并且字符串长度很长时就应该使用变量代替  使用条件语句时，常使用变量  123if [[ condition ]]; then	#statementsfi">
+<meta name="keywords" content="shell-script">
 <meta property="og:type" content="article">
-<meta property="og:title" content="case判断">
+<meta property="og:title" content="shell判断">
 <meta property="og:url" content="http://yoursite.com/shell/shell判断/index.html">
 <meta property="og:site_name" content="G_Yabind">
-<meta property="og:description" content="CASE判断 case格式 123456789101112131415case VARIABLE NAME in	value1)	   COMMAND	   ;;	value2)   	   COMMAND	   ;;	*)       COMMAND	   ;;esac在case程序中，可以在条件中使用 | ，表示或的意思，比如	2|3)	   COMMAND	   ;;">
+<meta property="og:description" content="shell脚本中的变量 当脚本中使用某个字符串较频繁并且字符串长度很长时就应该使用变量代替  使用条件语句时，常使用变量  123if [[ condition ]]; then	#statementsfi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-03T15:23:20.982Z">
+<meta property="og:updated_time" content="2019-06-04T08:00:19.441Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="case判断">
-<meta name="twitter:description" content="CASE判断 case格式 123456789101112131415case VARIABLE NAME in	value1)	   COMMAND	   ;;	value2)   	   COMMAND	   ;;	*)       COMMAND	   ;;esac在case程序中，可以在条件中使用 | ，表示或的意思，比如	2|3)	   COMMAND	   ;;">
+<meta name="twitter:title" content="shell判断">
+<meta name="twitter:description" content="shell脚本中的变量 当脚本中使用某个字符串较频繁并且字符串长度很长时就应该使用变量代替  使用条件语句时，常使用变量  123if [[ condition ]]; then	#statementsfi">
 
 
 
@@ -143,7 +143,7 @@
 
 
 
-  <title>case判断 | G_Yabind</title>
+  <title>shell判断 | G_Yabind</title>
   
 
 
@@ -329,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">case判断</h1>
+          <h1 class="post-title" itemprop="name headline">shell判断</h1>
         
 
         <div class="post-meta">
@@ -357,8 +357,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-03T23:23:20+08:00">
-                2019-06-03
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-04T16:00:19+08:00">
+                2019-06-04
               </time>
             
           </span>
@@ -417,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  170
+                  762
                 </span>
               
 
@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -454,10 +454,57 @@
       
 
       
-        <h1 id="CASE判断"><a href="#CASE判断" class="headerlink" title="CASE判断"></a>CASE判断</h1><ul>
+        <h1 id="shell脚本中的变量"><a href="#shell脚本中的变量" class="headerlink" title="shell脚本中的变量"></a>shell脚本中的变量</h1><ul>
+<li><p>当脚本中使用某个字符串较频繁并且字符串长度很长时就应该使用变量代替</p>
+</li>
+<li><p>使用条件语句时，常使用变量 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [[ condition ]]; then</span><br><span class="line"><span class="meta">	#</span>statements</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+<li><p>引用某个命令的结果时，用变量替代 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n=`wc -l 1.txt`</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>写和用户交互的脚本时，变量也是必不可少的 read -p “lnput anumber:” n; echo $n 如果没写这个n，可以直接使用 $REPLY</p>
+</li>
+<li><p>内置变量 $0,$1,$2…  $0表示脚本本身，$1第一个参数，$2第二个…  $#表示参数个数</p>
+</li>
+<li><p>数学运算 a=1; b=2; c=(($a+$b)) 或者 $[$a+$b]</p>
+</li>
+</ul>
+<h1 id="shell中的逻辑判断"><a href="#shell中的逻辑判断" class="headerlink" title="shell中的逻辑判断"></a>shell中的逻辑判断</h1><ul>
+<li><p>格式一</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [[ 条件 ]]; then</span><br><span class="line">	语句</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>格式二</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if [[ 条件 ]]; then</span><br><span class="line">	语句</span><br><span class="line">else</span><br><span class="line">	语句</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>格式三</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if [[ ... ]]; then</span><br><span class="line">	...</span><br><span class="line">elif</span><br><span class="line">	...</span><br><span class="line">	else</span><br><span class="line">		...</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>逻辑判断表达式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if [[ $a -gt $b ]];</span><br><span class="line">if [[ $a -lt 5 ]];</span><br><span class="line">if [[ $b -eq 10 ]];等</span><br><span class="line"><span class="meta">-gt(&gt;</span>); -lt(&lt;); -ge(&gt;=); -le(&lt;=); -eq(==); -ne(!=) 注意到处都是空格</span><br><span class="line">可以使用 &amp;&amp; || 结合多个条件</span><br><span class="line">if [[ $a -gt 5 ]]&amp;&amp;[[ $a -lt 10 ]]; then		逻辑并</span><br><span class="line">if [[ $b -gt 5 ]]||[[ $b -lt 3 ]]; then			逻辑或</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="if判断文件、目录属性"><a href="#if判断文件、目录属性" class="headerlink" title="if判断文件、目录属性"></a>if判断文件、目录属性</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[[ -f file ]]	判断是否是普通文件、且存在</span><br><span class="line">[[ -d file ]]	判断是否是目录、且存在</span><br><span class="line">[[ -e file ]]	判断文件或目录是否存在</span><br><span class="line">[[ -r file ]]	判断文件是否可读</span><br><span class="line">[[ -w file ]]	判断文件是否可写</span><br><span class="line">[[ -x file ]]	判断文件是否可执行</span><br><span class="line"></span><br><span class="line">[ -f/-d $f ] &amp;&amp; rm -f $f 文件/目录是否存在，存在执行删除</span><br><span class="line">[ -f/-d $f ] || touch $f 文件/目录是否存在，不存在执行创建</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 注意：取反就在方括号的最前面加上 ！ 就可以了</span><br></pre></td></tr></table></figure>
+<h1 id="if判断的一些特殊用法"><a href="#if判断的一些特殊用法" class="headerlink" title="if判断的一些特殊用法"></a>if判断的一些特殊用法</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if [[ -z "$a" ]]</span><br><span class="line"><span class="meta">#</span> 这个表示当变量a的值为空时会怎么样</span><br><span class="line">if [[ -n "$a" ]]</span><br><span class="line"><span class="meta">#</span> 表示当变量a的值不为空</span><br><span class="line">if grep -q '123' 1.txt; then</span><br><span class="line"><span class="meta">#</span> 表示如果1.txt中含有'123'的行时会怎么样</span><br><span class="line">if [[ ! -e file ]]; then</span><br><span class="line"><span class="meta">#</span> 表示文件不存在时会怎么样</span><br><span class="line">if [[ $a -lt 1 ]]; then</span><br><span class="line"><span class="meta">#</span> 当变量a小于1时会怎么样</span><br><span class="line"><span class="meta">#</span> 注意：[]中不能使用&gt;、&lt;、==、!=、&gt;=、&lt;=这样的符号</span><br></pre></td></tr></table></figure>
+<font color="red"><strong>注意：</strong></font>
+
+<ul>
+<li><font color="red">[]中不能使用&gt;、&lt;、==、!=、&gt;=、&lt;=这样的符号,一个 = 是赋值</font>
+</li>
+<li><font color="red">-z 或者 -n都不能作用在文件上，只能作用在变量上</font>
+</li>
+<li><font color="red">! -z EQUATE -n  、! -n EQUATE -z</font>
+</li>
+<li><font color="red">if grep -q ‘123’ 1.txt; then 取反为：if ! grep -q ‘123’ 1.txt; then</font>
+
+
+
+</li>
+</ul>
+<h1 id="CASE判断"><a href="#CASE判断" class="headerlink" title="CASE判断"></a>CASE判断</h1><ul>
 <li><p>case格式</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">case VARIABLE NAME in</span><br><span class="line">	value1)</span><br><span class="line">	   COMMAND</span><br><span class="line">	   ;;</span><br><span class="line">	value2)</span><br><span class="line">   	   COMMAND</span><br><span class="line">	   ;;</span><br><span class="line">	*)</span><br><span class="line">       COMMAND</span><br><span class="line">	   ;;</span><br><span class="line">esac</span><br><span class="line">在case程序中，可以在条件中使用 | ，表示或的意思，比如</span><br><span class="line">	2|3)</span><br><span class="line">	   COMMAND</span><br><span class="line">	   ;;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 </li>
 <li><p>示例</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">read -p "Please input a number: " n</span><br><span class="line">if [[ -z "$n" ]]; then</span><br><span class="line">	echo "Please input a number."</span><br><span class="line">	exit 1</span><br><span class="line">if</span><br><span class="line"></span><br><span class="line">n1=`echo $n | sed 's/[0-9]//g'`</span><br><span class="line">if [[ ! -z $n1 ]]; then # [[ -n $1 ]]</span><br><span class="line">	echo 'Please input a number.'</span><br><span class="line">	exit 1</span><br><span class="line"><span class="meta">#</span>	elfi [[ $n -lt 0 ]] || [[ $n -gt 100 ]]; then</span><br><span class="line"><span class="meta">#</span>		echo 'The number range is 0-100.'</span><br><span class="line"><span class="meta">#</span>		exit 1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">fi [[ $n -ge 0 ]] &amp;&amp; [[ $n -lt 60 ]]; then</span><br><span class="line">	tag=1</span><br><span class="line">	elfi [[ $n -ge 60 ]] &amp;&amp; [[ $n -lt 80 ]]; then</span><br><span class="line">		tag=2</span><br><span class="line">		elfi [[ $n -ge 80 ]] &amp;&amp; [[ $n -lt 90 ]]; then</span><br><span class="line">			tag=3</span><br><span class="line">			elfi [[ $n -ge 90 ]] &amp;&amp; [[ $n -le 100 ]]; then</span><br><span class="line">				tag=4</span><br><span class="line">				else</span><br><span class="line">					tag=0</span><br><span class="line">fi</span><br><span class="line">case  $tag in</span><br><span class="line">	1)</span><br><span class="line">		echo 'not ok'</span><br><span class="line">		;;</span><br><span class="line">	2)</span><br><span class="line">		echo 'ok'</span><br><span class="line">		;;</span><br><span class="line">	3|4)</span><br><span class="line">		echo 'very ok'</span><br><span class="line">		;;</span><br><span class="line">	0)</span><br><span class="line">		echo 'The number range is 0-100'</span><br><span class="line">		;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
@@ -490,11 +537,11 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
-    亚浜-Yabind
+    Yabind
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/shell/shell判断/" title="case判断">http://yoursite.com/shell/shell判断/</a>
+    <a href="http://yoursite.com/shell/shell判断/" title="shell判断">http://yoursite.com/shell/shell判断/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -509,7 +556,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/shell脚本/" rel="tag"><i class="fa fa-tag"></i> shell脚本</a>
+            <a href="/tags/shell-script/" rel="tag"><i class="fa fa-tag"></i> shell-script</a>
           
         </div>
       
@@ -695,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CASE判断"><span class="nav-number">1.</span> <span class="nav-text">CASE判断</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shell脚本中的变量"><span class="nav-number">1.</span> <span class="nav-text">shell脚本中的变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shell中的逻辑判断"><span class="nav-number">2.</span> <span class="nav-text">shell中的逻辑判断</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if判断文件、目录属性"><span class="nav-number">3.</span> <span class="nav-text">if判断文件、目录属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if判断的一些特殊用法"><span class="nav-number">4.</span> <span class="nav-text">if判断的一些特殊用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CASE判断"><span class="nav-number">5.</span> <span class="nav-text">CASE判断</span></a></li></ol></div>
             
 
           </div>
