@@ -99,17 +99,17 @@
 <meta name="description" content="上传文件所有需要的软件已经整理成了一个包。把包上传到每台机上的/usr/local/src/目录下 12345678910111213[root@localhost ~]# cd /usr/local/src/[root@localhost src]# lsFastDFS-install.tar.gz[root@localhost src]# tar -zxvf FastDFS-install.t">
 <meta name="keywords" content="FastDFS自动化安装">
 <meta property="og:type" content="article">
-<meta property="og:title" content="私有化部署-安装FastDFS应用">
+<meta property="og:title" content="私有化部署-自动化安装FastDFS应用">
 <meta property="og:url" content="http://yoursite.com/FastDFS应用/私有化部署-自动化安装FastDFS应用/index.html">
 <meta property="og:site_name" content="G_Yabind">
 <meta property="og:description" content="上传文件所有需要的软件已经整理成了一个包。把包上传到每台机上的/usr/local/src/目录下 12345678910111213[root@localhost ~]# cd /usr/local/src/[root@localhost src]# lsFastDFS-install.tar.gz[root@localhost src]# tar -zxvf FastDFS-install.t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:/Users/zqsign-yw/OneDrive/图片/img/1560222451437.png">
-<meta property="og:updated_time" content="2019-06-11T10:58:41.747Z">
+<meta property="og:image" content="https://guoyabing.top/gyabind/images/oss/github/fastdfs/1560222451437.png">
+<meta property="og:updated_time" content="2019-06-11T11:03:33.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="私有化部署-安装FastDFS应用">
+<meta name="twitter:title" content="私有化部署-自动化安装FastDFS应用">
 <meta name="twitter:description" content="上传文件所有需要的软件已经整理成了一个包。把包上传到每台机上的/usr/local/src/目录下 12345678910111213[root@localhost ~]# cd /usr/local/src/[root@localhost src]# lsFastDFS-install.tar.gz[root@localhost src]# tar -zxvf FastDFS-install.t">
-<meta name="twitter:image" content="c:/Users/zqsign-yw/OneDrive/图片/img/1560222451437.png">
+<meta name="twitter:image" content="https://guoyabing.top/gyabind/images/oss/github/fastdfs/1560222451437.png">
 
 
 
@@ -145,7 +145,7 @@
 
 
 
-  <title>私有化部署-安装FastDFS应用 | G_Yabind</title>
+  <title>私有化部署-自动化安装FastDFS应用 | G_Yabind</title>
   
 
 
@@ -331,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">私有化部署-安装FastDFS应用</h1>
+          <h1 class="post-title" itemprop="name headline">私有化部署-自动化安装FastDFS应用</h1>
         
 
         <div class="post-meta">
@@ -359,7 +359,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-11T18:58:41+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-11T19:03:33+08:00">
                 2019-06-11
               </time>
             
@@ -460,7 +460,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cd /usr/local/src/</span><br><span class="line">[root@localhost src]# ls</span><br><span class="line">FastDFS-install.tar.gz</span><br><span class="line">[root@localhost src]# tar -zxvf FastDFS-install.tar.gz </span><br><span class="line">./FastDFS/</span><br><span class="line">./FastDFS/ngx_cache_purge-2.3.tar.gz</span><br><span class="line">./FastDFS/installFastDFS.sh</span><br><span class="line">./FastDFS/fastdfs-nginx-module_v1.16.tar.gz</span><br><span class="line">./FastDFS/FastDFS_v5.05.tar.gz</span><br><span class="line">./FastDFS/nginx-1.6.2.tar.gz</span><br><span class="line">./FastDFS/libfastcommon-master.zip</span><br><span class="line">[root@localhost src]# ls</span><br><span class="line">FastDFS  FastDFS-install.tar.gz</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h1 id="选择需要安装的服务"><a href="#选择需要安装的服务" class="headerlink" title="选择需要安装的服务"></a>选择需要安装的服务</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost src]# cd FastDFS/</span><br><span class="line">[root@localhost FastDFS]# ls</span><br><span class="line">fastdfs-nginx-module_v1.16.tar.gz  installFastDFS.sh         nginx-1.6.2.tar.gz</span><br><span class="line">FastDFS_v5.05.tar.gz               libfastcommon-master.zip  ngx_cache_purge-2.3.tar.gz</span><br><span class="line">[root@localhost FastDFS]# sh installFastDFS.sh </span><br><span class="line">***</span><br><span class="line">Reminder:</span><br><span class="line">   Install only tracker [ Y/N ]:n</span><br><span class="line">   Install only storage [ Y/N ]:n</span><br><span class="line">   Install tracker and storage [ Y/N ]:y</span><br><span class="line">***</span><br><span class="line">  Several groups are defined for this service</span><br><span class="line">   [ 1 ro 2 ... ]:2</span><br><span class="line"></span><br><span class="line">***</span><br><span class="line">  Which group is the local service</span><br><span class="line">   [ 1 ro 2 ... ]:2</span><br><span class="line"></span><br><span class="line">***</span><br><span class="line">  Enter the IP of all trackers</span><br><span class="line">Format</span><br><span class="line">   [Tracker_ip]:ip1;ip2;ip3;ipn</span><br><span class="line">   [Tracker_ip]:192.168.1.92;192.168.1.93;192.168.1.94;192.168.1.95</span><br></pre></td></tr></table></figure>
-<p><img src="C:\Users\zqsign-yw\OneDrive\图片\img\1560222451437.png" alt="1560222451437"></p>
+<p><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/1560222451437.png" alt="1560222451437"></p>
 <h1 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost src]# /etc/init.d/fdfs_trackerd start</span><br><span class="line">Starting fdfs_trackerd (via systemctl):                    [  确定  ]</span><br><span class="line">[root@localhost src]# /etc/init.d/fdfs_storaged start</span><br><span class="line">Starting fdfs_storaged (via systemctl):                    [  确定  ]</span><br><span class="line">[root@localhost src]# ln -s /home/fastdfs/storage/data/ /home/fastdfs/storage/data/M00</span><br><span class="line">[root@localhost src]# ll /home/fastdfs/storage/data/M00</span><br><span class="line">lrwxrwxrwx 1 root root 27 5月  13 17:17 /home/fastdfs/storage/data/M00 -&gt; /home/fastdfs/storage/data/</span><br><span class="line">[root@localhost src]# /usr/local/nginx/sbin/nginx </span><br><span class="line">ngx_http_fastdfs_set pid=9017</span><br></pre></td></tr></table></figure>
 <font color="red">注意：</font><font color="grees">建议优先启动每台的tracker服务，在启动每台的storage服务。这样不会出现在启动storage的时候出现服务无法监听23000端口的情况</font>
 
@@ -498,7 +498,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/FastDFS应用/私有化部署-自动化安装FastDFS应用/" title="私有化部署-安装FastDFS应用">http://yoursite.com/FastDFS应用/私有化部署-自动化安装FastDFS应用/</a>
+    <a href="http://yoursite.com/FastDFS应用/私有化部署-自动化安装FastDFS应用/" title="私有化部署-自动化安装FastDFS应用">http://yoursite.com/FastDFS应用/私有化部署-自动化安装FastDFS应用/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
