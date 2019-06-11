@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/57b026cb.js","daovoice")
+  daovoice('init', {
+      app_id: "57b026cb"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="FastDFS,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="安装依赖包1yum install make cmake gcc gcc-c++ 安装 libfastcommon (所有服务器上)上传安装libfastcommon 将包 libfastcommon-master.zip  上传到/usr/local/src 目录，并解压">
+<meta name="keywords" content="FastDFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="私有化部署-安装FastDFS应用">
+<meta property="og:url" content="http://yoursite.com/FastDFS应用/私有化部署-安装FastDFS应用/index.html">
+<meta property="og:site_name" content="G_Yabind">
+<meta property="og:description" content="安装依赖包1yum install make cmake gcc gcc-c++ 安装 libfastcommon (所有服务器上)上传安装libfastcommon 将包 libfastcommon-master.zip  上传到/usr/local/src 目录，并解压">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download.png">
+<meta property="og:image" content="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733191527.png">
+<meta property="og:image" content="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733199863.png">
+<meta property="og:image" content="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733264941.png">
+<meta property="og:image" content="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733275092.png">
+<meta property="og:image" content="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733286895.png">
+<meta property="og:image" content="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733319392.png">
+<meta property="og:updated_time" content="2019-05-19T09:52:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="私有化部署-安装FastDFS应用">
+<meta name="twitter:description" content="安装依赖包1yum install make cmake gcc gcc-c++ 安装 libfastcommon (所有服务器上)上传安装libfastcommon 将包 libfastcommon-master.zip  上传到/usr/local/src 目录，并解压">
+<meta name="twitter:image" content="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/FastDFS应用/私有化部署-安装FastDFS应用/">
+
+
+
+
+
+  <title>私有化部署-安装FastDFS应用 | G_Yabind</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">G_Yabind</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">亚浜</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-码市">
+          <a href="/码市/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            码市
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/FastDFS应用/私有化部署-安装FastDFS应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yabind">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://guoyabing.top/gyabind/images/oss/github/2019/haizeiwang.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G_Yabind">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">私有化部署-安装FastDFS应用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-18T16:30:52+08:00">
+                2019-05-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-19T17:52:03+08:00">
+                2019-05-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FastDFS应用/" itemprop="url" rel="index">
+                    <span itemprop="name">FastDFS应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/FastDFS应用/私有化部署-安装FastDFS应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/FastDFS应用/私有化部署-安装FastDFS应用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install make cmake gcc gcc-c++</span><br></pre></td></tr></table></figure>
+<h2 id="安装-libfastcommon-所有服务器上"><a href="#安装-libfastcommon-所有服务器上" class="headerlink" title="安装 libfastcommon (所有服务器上)"></a>安装 libfastcommon (所有服务器上)</h2><h3 id="上传安装libfastcommon"><a href="#上传安装libfastcommon" class="headerlink" title="上传安装libfastcommon"></a>上传安装libfastcommon</h3><ul>
+<li>将包 libfastcommon-master.zip  上传到/usr/local/src 目录，并解压</li>
+</ul>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/</span><br><span class="line">unzip libfastcommon-master.zip</span><br><span class="line">cd libfastcommon-master</span><br><span class="line">./make.sh</span><br><span class="line">./make.sh install</span><br></pre></td></tr></table></figure>
+<h3 id="创建软链接"><a href="#创建软链接" class="headerlink" title="创建软链接"></a>创建软链接</h3><p>​    因为 FastDFS  主程序设置的 lib  目录是/usr/local/lib，所以需要创建软链接。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/lib64/libfastcommon.so /usr/local/lib/libfastcommon.so </span><br><span class="line">ln -s /usr/lib64/libfastcommon.so /usr/lib/libfastcommon.so</span><br><span class="line">ln -s /usr/lib64/libfdfsclient.so /usr/local/lib/libfdfsclient.so</span><br><span class="line">ln -s /usr/lib64/libfdfsclient.so /usr/lib/libfdfsclient.so</span><br></pre></td></tr></table></figure>
+<p>​        注意：此处不要惊讶为什么没有libfdfsclient.so，因为还没有安装，安装FastDFS之后，这个文件就会被创建的。</p>
+<h2 id="安装FastDFS"><a href="#安装FastDFS" class="headerlink" title="安装FastDFS"></a>安装FastDFS</h2><p>​        FastDFS安装包可以在众签提供的源码包中找到，也可以自行从网上下载，版本是：<a href="https://github.com/happyfish100/fastdfs/archive/V5.05.tar.gz" target="_blank" rel="noopener">FastDFS_v5.05.tar.gz</a></p>
+<h3 id="上传安装FastDFS"><a href="#上传安装FastDFS" class="headerlink" title="上传安装FastDFS"></a>上传安装FastDFS</h3><ul>
+<li>将FastDFS 源码包上传到服务器的 /usr/local/src 目录，并解 压</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/</span><br><span class="line">tar -zxvf FastDFS_v5.05.tar.gz</span><br><span class="line">cd FastDFS</span><br><span class="line">./make.sh</span><br><span class="line">./make.sh install</span><br></pre></td></tr></table></figure>
+<h3 id="FastDFS的文件介绍"><a href="#FastDFS的文件介绍" class="headerlink" title="FastDFS的文件介绍"></a>FastDFS的文件介绍</h3><ul>
+<li><p>以上是采用默认的方式安装的FastDFS，安装后相应的服务脚本、命令和启动文件如下：</p>
+<p>a. 服务脚本文件的路径是：</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/fdfs_storaged</span><br><span class="line">/etc/init.d/fdfs_tracker</span><br></pre></td></tr></table></figure>
+<p>​        b. 配置文件的路径是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/fdfs/client.conf.sample</span><br><span class="line">/etc/fdfs/storage.conf.sample</span><br><span class="line">/etc/fdfs/tracker.conf.sample</span><br></pre></td></tr></table></figure>
+<p>​        c. 命令文件的路径是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/fdfs_append_file     </span><br><span class="line">/usr/bin/fdfs_appender_test   </span><br><span class="line">/usr/bin/fdfs_appender_test1  </span><br><span class="line">/usr/bin/fdfs_crc32          </span><br><span class="line">/usr/bin/fdfs_delete_file    </span><br><span class="line">/usr/bin/fdfs_download_file  </span><br><span class="line">/usr/bin/fdfs_file_info  </span><br><span class="line">/usr/bin/fdfs_monitor    </span><br><span class="line">/usr/bin/fdfs_storaged   </span><br><span class="line">/usr/bin/fdfs_test      </span><br><span class="line">/usr/bin/fdfs_test1     </span><br><span class="line">/usr/bin/fdfs_trackerd</span><br><span class="line">/usr/bin/fdfs_upload_appender</span><br><span class="line">/usr/bin/fdfs_upload_file</span><br></pre></td></tr></table></figure>
+<h3 id="修改服务脚本文件"><a href="#修改服务脚本文件" class="headerlink" title="修改服务脚本文件"></a>修改服务脚本文件</h3><ul>
+<li>因为FastDFS采用默认方式安装，服务脚本文件中默认配置的FastDFS命令文件路径是/usr/local/bin，但是默认方式安装的命令文件实际路径如上所展示，目录是/usr/bin ，所以需要修改服务脚本中的命令了路径，修改方式如下：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>修改tracker服务脚本</span><br><span class="line">sed -i 's/usr\/local\/bin/usr\/bin/g' /etc/init.d/fdfs_trackerd</span><br><span class="line"><span class="meta">#</span>修改storage服务脚本</span><br><span class="line">sed -i 's/usr\/local\/bin/usr\/bin/g' /etc/init.d/fdfs_storaged</span><br></pre></td></tr></table></figure>
+<h1 id="配置FastDFS追踪器tracker"><a href="#配置FastDFS追踪器tracker" class="headerlink" title="配置FastDFS追踪器tracker"></a>配置FastDFS追踪器tracker</h1><h2 id="修改tracker配置文件"><a href="#修改tracker配置文件" class="headerlink" title="修改tracker配置文件"></a>修改tracker配置文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span></span><br><span class="line">cd /etc/fdfs/</span><br><span class="line"><span class="meta">#</span>创建tracker配置文件</span><br><span class="line">cp tracker.conf.sample tracker.conf</span><br><span class="line"><span class="meta">#</span>修改配置文件</span><br><span class="line">vi /etc/fdfs/tracker.conf</span><br><span class="line"><span class="meta">#</span>##将文件中的相应项修改为如下内容</span><br><span class="line">disabled=false </span><br><span class="line">port=22122</span><br><span class="line">base_path=/home/fastdfs/tracker</span><br></pre></td></tr></table></figure>
+<h2 id="创建FastDFS存储路径"><a href="#创建FastDFS存储路径" class="headerlink" title="创建FastDFS存储路径"></a>创建FastDFS存储路径</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir –p /home/fastdfs/tracker</span><br></pre></td></tr></table></figure>
+<h2 id="修改防火墙，放开tracker端口"><a href="#修改防火墙，放开tracker端口" class="headerlink" title="修改防火墙，放开tracker端口"></a>修改防火墙，放开tracker端口</h2><p>​            注：此服务端口，不需要被外网访问，请在防火墙中禁止此端口被外网访问，但是此端口一定要允许内网中可以访问，调整防火墙是为了让此服务被内网服务访问。</p>
+<p>​        以本机iptables为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>vi /etc/sysconfig/iptables</span><br><span class="line"><span class="meta">#</span>修改内容如下</span><br><span class="line"><span class="meta">#</span>下方内容为放开本服务器的22122端口吗，如果此主机有外网，外网也能访问</span><br><span class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 22122 -j ACCEPT</span><br><span class="line"><span class="meta">#</span>下方内容为仅对-s后ip或者网段的主机或者主机端，放开本服务器的22122端口</span><br><span class="line">-A INPUT -p tcp -s 192.168.0.0/16 --dport 22122 -j ACCEPT</span><br><span class="line"><span class="meta">#</span>#重启防火墙，使配置生效。</span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
+<h2 id="启动tracker服务，并检查是否正常启动"><a href="#启动tracker服务，并检查是否正常启动" class="headerlink" title="启动tracker服务，并检查是否正常启动"></a>启动tracker服务，并检查是否正常启动</h2><p>​            使用如下两种命令之一启动tracker服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service fdfs_trackerd restart</span><br><span class="line"><span class="meta">#</span>或者</span><br><span class="line">/etc/init.d/fdfs_trackerd start</span><br></pre></td></tr></table></figure>
+<p>​            方式一：启动服务后，在目录/home/fastdfs/tracker目录下会看到一个data、logs目录，通过一下命令观察tracker是否启动成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -20f /home/fastdfs/tracker/logs/trackerd.log</span><br></pre></td></tr></table></figure>
+<p><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download.png" alt="img"></p>
+<p>当看到以上信息的时候表示tracker已经正常启动</p>
+<p>​            方式二：执行命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netstat -unltp|grep fdfs</span><br><span class="line">或</span><br><span class="line">ss -ntlp |grep fdfs</span><br></pre></td></tr></table></figure>
+<p><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733191527.png" alt="img"></p>
+<p><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733199863.png" alt="img"></p>
+<p>​            能出现以上信息，也能表示启动FastDFS的tracker服务启动成功。</p>
+<h2 id="设置-FastDFS-跟踪器开机启动"><a href="#设置-FastDFS-跟踪器开机启动" class="headerlink" title="设置 FastDFS  跟踪器开机启动"></a>设置 FastDFS  跟踪器开机启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.d/rc.local</span><br><span class="line"></span><br><span class="line">#将以下内容填入文件末尾</span><br><span class="line"></span><br><span class="line">## FastDFS Tracker</span><br><span class="line">/etc/init.d/fdfs_trackerd start</span><br></pre></td></tr></table></figure>
+<h1 id="配置FastDFS存储器storage"><a href="#配置FastDFS存储器storage" class="headerlink" title="配置FastDFS存储器storage"></a>配置FastDFS存储器storage</h1><h2 id="修改storage配置文件"><a href="#修改storage配置文件" class="headerlink" title="修改storage配置文件"></a>修改storage配置文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span></span><br><span class="line">cd /etc/fdfs/</span><br><span class="line"><span class="meta">#</span>创建storage配置文件</span><br><span class="line">cp storage.conf.sample storage.conf</span><br><span class="line"><span class="meta">#</span>修改配置文件</span><br><span class="line">vi /etc/fdfs/storage.conf</span><br><span class="line"><span class="meta">#</span>##将文件中的相应项修改为如下内容</span><br><span class="line">disabled=false </span><br><span class="line">group_name=group1</span><br><span class="line">port=23000</span><br><span class="line">base_path=/home/fastdfs/storage</span><br><span class="line">store_path0=/home/fastdfs/storage</span><br><span class="line">store_path_count=1</span><br><span class="line">tracker_server=192.168.1.131:22122#（如果有多个tracker的话，可以在这个配置中填写多个tracker，写法如同现在的写法）</span><br><span class="line">tracker_server=192.168.1.132:22122</span><br><span class="line">http.server_port=8888 #(后续安装的nginx端口需要更改为8888，这样就可以通过nginx服务在web浏览器中查看存储的文件了)</span><br></pre></td></tr></table></figure>
+<h2 id="创建FastDFS存储路径-1"><a href="#创建FastDFS存储路径-1" class="headerlink" title="创建FastDFS存储路径"></a>创建FastDFS存储路径</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir –p /home/fastdfs/storage</span><br></pre></td></tr></table></figure>
+<p>修改防火墙，放开storage端口</p>
+<p>​            注：此服务端口，不需要被外网访问，请在防火墙中禁止此端口被外网访问，但是此端口一定要允许内网中可以访问，调整防火墙是为了让此服务被内网服务访问。</p>
+<p>​        以本机iptables为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>vi /etc/sysconfig/iptables</span><br><span class="line"><span class="meta">#</span>修改内容如下</span><br><span class="line"><span class="meta">#</span>下方内容为放开本服务器的23000端口吗，如果此主机有外网，外网也能访问</span><br><span class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 23000 -j ACCEPT</span><br><span class="line"><span class="meta">#</span>下方内容为仅对-s后ip或者网段的主机或者主机端，放开本服务器的23000端口</span><br><span class="line">-A INPUT -p tcp -s 192.168.0.0/16 --dport 23000 -j ACCEPT</span><br><span class="line"><span class="meta">#</span>#重启防火墙，使配置生效。</span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
+<h2 id="启动tracker服务，并检查是否正常启动-1"><a href="#启动tracker服务，并检查是否正常启动-1" class="headerlink" title="启动tracker服务，并检查是否正常启动"></a>启动tracker服务，并检查是否正常启动</h2><p>​            使用如下两种命令之一启动tracker服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service fdfs_storaged restart</span><br><span class="line"><span class="meta">#</span>或</span><br><span class="line">/etc/init.d/fdfs_storaged start</span><br></pre></td></tr></table></figure>
+<p>​            方式一：启动服务后，在目录/home/fastdfs/storaged目录下会看到一个data、logs目录，通过一下命令观察tracker是否启动成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -20f /home/fastdfs/storage/logs/storaged.log</span><br></pre></td></tr></table></figure>
+<p><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733264941.png" alt="img"></p>
+<ul>
+<li><p>当看到以上信息的时候表示storage已经正常启动</p>
+</li>
+<li><p>当然也可以查看下tracker的日志，已经发生了变化，变化如下</p>
+</li>
+</ul>
+<p><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733275092.png" alt="img"></p>
+<p>​            方式二：执行命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netstat -unltp|grep fdfs</span><br><span class="line"><span class="meta">#</span>或</span><br><span class="line">ss -ntlp |grep fdfs</span><br></pre></td></tr></table></figure>
+<p>​         <img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733286895.png" alt="img"></p>
+<ul>
+<li>能出现以上信息，也能表示启动FastDFS的stroage服务启动成功。</li>
+</ul>
+<h2 id="设置-FastDFS-存储器开机启动"><a href="#设置-FastDFS-存储器开机启动" class="headerlink" title="设置 FastDFS  存储器开机启动"></a>设置 FastDFS  存储器开机启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.d/rc.local</span><br><span class="line"><span class="meta">#</span>将以下内容填入文件末尾</span><br><span class="line"><span class="meta">#</span> FastDFS Tracker</span><br><span class="line">/etc/init.d/fdfs_storaged start</span><br></pre></td></tr></table></figure>
+<h2 id="检查集群信息"><a href="#检查集群信息" class="headerlink" title="检查集群信息"></a>检查集群信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/fdfs_monitor /etc/fdfs/storage.conf</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用以上命令，可以看到整个FastDFS集群的storage的分组以及组中storge的个数。如下图</li>
+</ul>
+<p>​        <img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733319392.png" alt="img"></p>
+<h1 id="利用文件上传测试服务安装是否成功"><a href="#利用文件上传测试服务安装是否成功" class="headerlink" title="利用文件上传测试服务安装是否成功"></a>利用文件上传测试服务安装是否成功</h1><h2 id="修改tracker服务器中的客户端配置文件client-conf"><a href="#修改tracker服务器中的客户端配置文件client-conf" class="headerlink" title="修改tracker服务器中的客户端配置文件client.conf"></a>修改tracker服务器中的客户端配置文件client.conf</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>从模板创建配置文件</span><br><span class="line">cp /etc/fdfs/client.conf.sample  /etc/fdfs/client.conf</span><br><span class="line"><span class="meta">#</span>修改配置文件</span><br><span class="line">vi /etc/fdfs/client.conf base_path=/fastdfs/tracker</span><br><span class="line">base_path=/fastdfs/tracker</span><br><span class="line">tracker_server=192.168.1.131:22122</span><br><span class="line">tracker_server=192.168.1.132:22122</span><br></pre></td></tr></table></figure>
+<h2 id="执行命令上传一个文件"><a href="#执行命令上传一个文件" class="headerlink" title="执行命令上传一个文件"></a>执行命令上传一个文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/fdfs_upload_file  /etc/fdfs/client.conf /usr/local/src/FastDFS_v5.05.tar.gz</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果上传成功会返回一个ID号如下：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">group1/M00/00/00/wKgBh1Xtr9-AeTfWAAVFOL7FJU4.tar.gz</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以去/home/fastdfs/storage/data/00/00/目录中找到此名称为wKgBh1Xtr9-AeTfWAAVFOL7FJU4.tar.gz的文件。</li>
+</ul>
+<h1 id="在存储节点安装nginx服务。"><a href="#在存储节点安装nginx服务。" class="headerlink" title="在存储节点安装nginx服务。"></a>在存储节点安装nginx服务。</h1><h2 id="fastdfs-nginx-module-作用说明"><a href="#fastdfs-nginx-module-作用说明" class="headerlink" title="fastdfs-nginx-module 作用说明"></a>fastdfs-nginx-module 作用说明</h2><ul>
+<li>FastDFS 通过 Tracker 服务器,将文件放在 Storage 服务器存储，但是同组存储服务器之间需要进入文件复制，有同步延迟的问题。假设 Tracker 服务器将文件上传到了 存储器中的一台如sg1，上传成功后文件 ID已经返回给客户端。此时 FastDFS 存储集群机制会将这个文件同步到同组存储sg2，在文件还没有复制完成的情况下，客户端如果用这个文件 ID 在 sg2 上取文件,就会出现文件无法访问的错误。而 fastdfs-nginx-module 可以重定向文件连接到源服务器取文件,避免客户端由于复制延迟导致的文件无法访问错误。（解压后的 fastdfs-nginx-module 在 nginx 编译安装时使用）</li>
+</ul>
+<h2 id="上传fastdfs-nginx模块"><a href="#上传fastdfs-nginx模块" class="headerlink" title="上传fastdfs-nginx模块"></a>上传fastdfs-nginx模块</h2><ul>
+<li>将<a href="http://jaist.dl.sourceforge.net/project/fastdfs/FastDFS Nginx Module Source Code/fastdfs-nginx-module_v1.16.tar.gz" target="_blank" rel="noopener">fastdfs-nginx-module_v1.16.tar.gz </a>到/usr/local/src，解压</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> cd /usr/local/src/</span><br><span class="line"><span class="meta">#</span> tar -zxvf fastdfs-nginx-module_v1.16.tar.gz</span><br></pre></td></tr></table></figure>
+<h2 id="修改-fastdfs-nginx模块的配置文件"><a href="#修改-fastdfs-nginx模块的配置文件" class="headerlink" title="修改 fastdfs-nginx模块的配置文件"></a>修改 fastdfs-nginx模块的配置文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vi /usr/local/src/fastdfs-nginx-module/src/config</span><br><span class="line">CORE_INCS="$CORE_INCS /usr/local/include/fastdfs /usr/local/include/fastcommon/"</span><br><span class="line"><span class="meta">#</span>修改为：</span><br><span class="line">CORE_INCS="$CORE_INCS /usr/include/fastdfs /usr/include/fastcommon/"</span><br><span class="line"><span class="meta">#</span>（注意：这个路径修改是很重要的，不然在 nginx 编译的时候会报错的）</span><br></pre></td></tr></table></figure>
+<h2 id="上传Nginx源码包"><a href="#上传Nginx源码包" class="headerlink" title="上传Nginx源码包"></a>上传Nginx源码包</h2><ul>
+<li>将当前的稳定版本 Nginx上传到到/usr/local/src 目录</li>
+</ul>
+<p>​            可以从官方网站下载最新版本（文档书写时最新稳定版是<a href="https://nginx.org/download/nginx-1.14.0.tar.gz" target="_blank" rel="noopener">https://nginx.org/download/nginx-1.14.0.tar.gz</a>）。文档是使用的版本是<a href="https://nginx.org/download/nginx-1.14.0.tar.gz" target="_blank" rel="noopener">nginx-1.14.0.tar.gz</a></p>
+<h2 id="安装编译-Nginx-所需的依赖包"><a href="#安装编译-Nginx-所需的依赖包" class="headerlink" title="安装编译 Nginx 所需的依赖包"></a>安装编译 Nginx 所需的依赖包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> yum install gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl openssl-devel</span><br></pre></td></tr></table></figure>
+<h2 id="编译安装-Nginx"><a href="#编译安装-Nginx" class="headerlink" title="编译安装 Nginx"></a>编译安装 Nginx</h2><ul>
+<li>添加 fastdfs-nginx-module 模块</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/</span><br><span class="line">tar -zxvf nginx-1.14.0.tar.gz</span><br><span class="line">cd nginx-1.14.0</span><br><span class="line">./configure --prefix=/usr/local/nginx --add-module=/usr/local/src/fastdfs-nginx-module/src</span><br><span class="line"><span class="meta">#</span> make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h2 id="复制-fastdfs-nginx-module-源码中的配置文件到-etc-fdfs-目录"><a href="#复制-fastdfs-nginx-module-源码中的配置文件到-etc-fdfs-目录" class="headerlink" title="复制 fastdfs-nginx-module 源码中的配置文件到/etc/fdfs 目录"></a>复制 fastdfs-nginx-module 源码中的配置文件到/etc/fdfs 目录</h2><ul>
+<li>上传配置文件并修改</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/local/src/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/</span><br><span class="line">vi /etc/fdfs/mod_fastdfs.conf</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>(1)第一组 Storage 的 mod_fastdfs.conf 配置如下：</span><br><span class="line">connect_timeout=10</span><br><span class="line">base_path=/tmp</span><br><span class="line">tracker_server=192.168.1.131:22122</span><br><span class="line">tracker_server=192.168.1.132:22122</span><br><span class="line">storage_server_port=23000</span><br><span class="line">group_name=group1</span><br><span class="line">url_have_group_name = true</span><br><span class="line">store_path0=/fastdfs/storage</span><br><span class="line">group_count = 2</span><br><span class="line">[group1]</span><br><span class="line">group_name=group1</span><br><span class="line">storage_server_port=23000</span><br><span class="line">store_path_count=1</span><br><span class="line">store_path0=/fastdfs/storage</span><br><span class="line">[group2]</span><br><span class="line">group_name=group2</span><br><span class="line">storage_server_port=23000</span><br><span class="line">store_path_count=1</span><br><span class="line">store_path0=/fastdfs/storage</span><br><span class="line"><span class="meta">#</span>(2)第一组 Storage 的 mod_fastdfs.conf 配置与第一组配置只有 group_name 不同：</span><br><span class="line">group_name=group2</span><br></pre></td></tr></table></figure>
+<p>以上是按照两个group组来，实际操作过程中，如果只有一个组可以做如下修改</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/fdfs/mod_fastdfs.conf</span><br><span class="line"><span class="meta">#</span>(1)第一组 Storage 的 mod_fastdfs.conf 配置如下：</span><br><span class="line">connect_timeout=10</span><br><span class="line">base_path=/tmp</span><br><span class="line">tracker_server=192.168.1.131:22122</span><br><span class="line">tracker_server=192.168.1.132:22122</span><br><span class="line">storage_server_port=23000</span><br><span class="line">group_name=group1</span><br><span class="line">url_have_group_name = true</span><br><span class="line">store_path0=/fastdfs/storage</span><br><span class="line">group_count = 1</span><br><span class="line">[group1]</span><br><span class="line">group_name=group1</span><br><span class="line">storage_server_port=23000</span><br><span class="line">store_path_count=1</span><br><span class="line">store_path0=/fastdfs/storage</span><br></pre></td></tr></table></figure>
+<h2 id="复制-FastDFS-的部分配置文件到-etc-fdfs-目录"><a href="#复制-FastDFS-的部分配置文件到-etc-fdfs-目录" class="headerlink" title="复制 FastDFS 的部分配置文件到/etc/fdfs 目录"></a>复制 FastDFS 的部分配置文件到/etc/fdfs 目录</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/FastDFS/conf</span><br><span class="line">cp http.conf mime.types /etc/fdfs/</span><br></pre></td></tr></table></figure>
+<p>在/fastdfs/storage 文件存储目录下创建软连接,将其链接到实际存放数据的目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /fastdfs/storage/data/ /fastdfs/storage/data/M00</span><br></pre></td></tr></table></figure>
+<h2 id="修改-Nginx配置文件，简洁版-nginx-配置样例"><a href="#修改-Nginx配置文件，简洁版-nginx-配置样例" class="headerlink" title="修改 Nginx配置文件，简洁版 nginx 配置样例"></a>修改 Nginx配置文件，简洁版 nginx 配置样例</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>vi /usr/local/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line">user root;</span><br><span class="line">worker_processes 1;</span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 1024;</span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">    include mime.types;</span><br><span class="line">    default_type application/octet-stream;</span><br><span class="line">    sendfile on;</span><br><span class="line">    keepalive_timeout 65;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen 8888;</span><br><span class="line">        server_name localhost;</span><br><span class="line">        location ~/group([0-9])/M00 &#123;</span><br><span class="line">        #alias /fastdfs/storage/data;</span><br><span class="line">        ngx_fastdfs_module;</span><br><span class="line">    &#125;</span><br><span class="line">    error_page 500 502 503 504 /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root html;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​        注意：</p>
+<p>​                8888端口要与/etc/fdfs/storage.conf 中的 http.server_port=8888 相对应</p>
+<p>​                nginx.conf第一行的user 一定要写成root</p>
+<h2 id="修改防火墙，放开NGINX端口"><a href="#修改防火墙，放开NGINX端口" class="headerlink" title="修改防火墙，放开NGINX端口"></a>修改防火墙，放开NGINX端口</h2><p>​            注：此服务端口，不需要被外网访问，请在防火墙中禁止此端口被外网访问，但是此端口一定要允许内网中可以访问，调整防火墙是为了让此服务被内网服务访问。</p>
+<p>​        以本机iptables为例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#vi /etc/sysconfig/iptables</span><br><span class="line">#修改内容如下</span><br><span class="line">#下方内容为放开本服务器的8888端口吗，如果此主机有外网，外网也能访问</span><br><span class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 8888 -j ACCEPT</span><br><span class="line">#下方内容为对-s后ip或者网段的主机或者主机端，放开本服务器的8888端口</span><br><span class="line">-A INPUT -p tcp -s 192.168.0.0/16 --dport 8888 -j ACCEPT</span><br></pre></td></tr></table></figure>
+<p>​        重启防火墙，使配置生效。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
+<h2 id="启动NGINX"><a href="#启动NGINX" class="headerlink" title="启动NGINX"></a>启动NGINX</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/nginx/sbin/nginx</span><br></pre></td></tr></table></figure>
+<p>在控制台会出现以下内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ngx_http_fastdfs_set pid=xxx</span><br></pre></td></tr></table></figure>
+<p>（重启 Nginx 的命令为：/usr/local/nginx/sbin/nginx -s reload）</p>
+<h2 id="NGINX加入开机启动"><a href="#NGINX加入开机启动" class="headerlink" title="NGINX加入开机启动"></a>NGINX加入开机启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.local</span><br><span class="line"><span class="meta">#</span>在末尾加入以下内容</span><br><span class="line">/usr/local/nginx/sbin/nginx</span><br></pre></td></tr></table></figure>
+<h2 id="通过浏览器测试访问6-2步骤中上传的文件"><a href="#通过浏览器测试访问6-2步骤中上传的文件" class="headerlink" title="通过浏览器测试访问6.2步骤中上传的文件"></a>通过浏览器测试访问6.2步骤中上传的文件</h2><p>wget <a href="http://127.0.0.1:8888/group1/M00/00/00/wKgBh1Xtr9-AeTfWAAVFOL7FJU4.tar.gz" target="_blank" rel="noopener">http://127.0.0.1:8888/group1/M00/00/00/wKgBh1Xtr9-AeTfWAAVFOL7FJU4.tar.gz</a> 如果能获取到此文件，表示配置成功</p>
+<p>​    <strong>至此，配置FastDFS已经完成。</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Yabind
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/FastDFS应用/私有化部署-安装FastDFS应用/" title="私有化部署-安装FastDFS应用">http://yoursite.com/FastDFS应用/私有化部署-安装FastDFS应用/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/FastDFS/" rel="tag"><i class="fa fa-tag"></i> FastDFS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/FastDFS应用/FastDFS-介绍/" rel="next" title="FastDFS介绍">
+                <i class="fa fa-chevron-left"></i> FastDFS介绍
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Linux高级/安装zabbix监控软件/" rel="prev" title="安装Zabbix监控软件">
+                安装Zabbix监控软件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://guoyabing.top/gyabind/images/oss/github/2019/haizeiwang.jpeg" alt="Yabind">
+            
+              <p class="site-author-name" itemprop="name">Yabind</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装依赖包"><span class="nav-number">1.</span> <span class="nav-text">安装依赖包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-libfastcommon-所有服务器上"><span class="nav-number">1.1.</span> <span class="nav-text">安装 libfastcommon (所有服务器上)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上传安装libfastcommon"><span class="nav-number">1.1.1.</span> <span class="nav-text">上传安装libfastcommon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建软链接"><span class="nav-number">1.1.2.</span> <span class="nav-text">创建软链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装FastDFS"><span class="nav-number">1.2.</span> <span class="nav-text">安装FastDFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上传安装FastDFS"><span class="nav-number">1.2.1.</span> <span class="nav-text">上传安装FastDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FastDFS的文件介绍"><span class="nav-number">1.2.2.</span> <span class="nav-text">FastDFS的文件介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改服务脚本文件"><span class="nav-number">1.2.3.</span> <span class="nav-text">修改服务脚本文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置FastDFS追踪器tracker"><span class="nav-number">2.</span> <span class="nav-text">配置FastDFS追踪器tracker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改tracker配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">修改tracker配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建FastDFS存储路径"><span class="nav-number">2.2.</span> <span class="nav-text">创建FastDFS存储路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改防火墙，放开tracker端口"><span class="nav-number">2.3.</span> <span class="nav-text">修改防火墙，放开tracker端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动tracker服务，并检查是否正常启动"><span class="nav-number">2.4.</span> <span class="nav-text">启动tracker服务，并检查是否正常启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-FastDFS-跟踪器开机启动"><span class="nav-number">2.5.</span> <span class="nav-text">设置 FastDFS  跟踪器开机启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置FastDFS存储器storage"><span class="nav-number">3.</span> <span class="nav-text">配置FastDFS存储器storage</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改storage配置文件"><span class="nav-number">3.1.</span> <span class="nav-text">修改storage配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建FastDFS存储路径-1"><span class="nav-number">3.2.</span> <span class="nav-text">创建FastDFS存储路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动tracker服务，并检查是否正常启动-1"><span class="nav-number">3.3.</span> <span class="nav-text">启动tracker服务，并检查是否正常启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-FastDFS-存储器开机启动"><span class="nav-number">3.4.</span> <span class="nav-text">设置 FastDFS  存储器开机启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检查集群信息"><span class="nav-number">3.5.</span> <span class="nav-text">检查集群信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用文件上传测试服务安装是否成功"><span class="nav-number">4.</span> <span class="nav-text">利用文件上传测试服务安装是否成功</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改tracker服务器中的客户端配置文件client-conf"><span class="nav-number">4.1.</span> <span class="nav-text">修改tracker服务器中的客户端配置文件client.conf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行命令上传一个文件"><span class="nav-number">4.2.</span> <span class="nav-text">执行命令上传一个文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在存储节点安装nginx服务。"><span class="nav-number">5.</span> <span class="nav-text">在存储节点安装nginx服务。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fastdfs-nginx-module-作用说明"><span class="nav-number">5.1.</span> <span class="nav-text">fastdfs-nginx-module 作用说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传fastdfs-nginx模块"><span class="nav-number">5.2.</span> <span class="nav-text">上传fastdfs-nginx模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-fastdfs-nginx模块的配置文件"><span class="nav-number">5.3.</span> <span class="nav-text">修改 fastdfs-nginx模块的配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传Nginx源码包"><span class="nav-number">5.4.</span> <span class="nav-text">上传Nginx源码包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装编译-Nginx-所需的依赖包"><span class="nav-number">5.5.</span> <span class="nav-text">安装编译 Nginx 所需的依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译安装-Nginx"><span class="nav-number">5.6.</span> <span class="nav-text">编译安装 Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制-fastdfs-nginx-module-源码中的配置文件到-etc-fdfs-目录"><span class="nav-number">5.7.</span> <span class="nav-text">复制 fastdfs-nginx-module 源码中的配置文件到/etc/fdfs 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制-FastDFS-的部分配置文件到-etc-fdfs-目录"><span class="nav-number">5.8.</span> <span class="nav-text">复制 FastDFS 的部分配置文件到/etc/fdfs 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-Nginx配置文件，简洁版-nginx-配置样例"><span class="nav-number">5.9.</span> <span class="nav-text">修改 Nginx配置文件，简洁版 nginx 配置样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改防火墙，放开NGINX端口"><span class="nav-number">5.10.</span> <span class="nav-text">修改防火墙，放开NGINX端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动NGINX"><span class="nav-number">5.11.</span> <span class="nav-text">启动NGINX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NGINX加入开机启动"><span class="nav-number">5.12.</span> <span class="nav-text">NGINX加入开机启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过浏览器测试访问6-2步骤中上传的文件"><span class="nav-number">5.13.</span> <span class="nav-text">通过浏览器测试访问6.2步骤中上传的文件</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-google"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yabind</span>
+
+  
+</div>
+
+
+<!--  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'XO9Ng5cSNxTsy8I5ey3YUig1-gzGzoHsz',
+        appKey: 'Md0vcDF7DSWRRfCImcyYsyc6',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
