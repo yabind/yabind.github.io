@@ -499,12 +499,15 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service fdfs_trackerd restart</span><br><span class="line"><span class="meta">#</span>或者</span><br><span class="line">/etc/init.d/fdfs_trackerd start</span><br></pre></td></tr></table></figure>
 <p>​            方式一：启动服务后，在目录/home/fastdfs/tracker目录下会看到一个data、logs目录，通过一下命令观察tracker是否启动成功</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -20f /home/fastdfs/tracker/logs/trackerd.log</span><br></pre></td></tr></table></figure>
-<p><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download.png" alt="img"></p>
+<font align="left"><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download.png" alt="img"></font>
+
 <p>当看到以上信息的时候表示tracker已经正常启动</p>
 <p>​            方式二：执行命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netstat -unltp|grep fdfs</span><br><span class="line">或</span><br><span class="line">ss -ntlp |grep fdfs</span><br></pre></td></tr></table></figure>
-<p><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733191527.png" alt="img"></p>
-<p><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733199863.png" alt="img"></p>
+<font align="left"><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733191527.png" alt="img"></font>
+
+<font align="left"><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733199863.png" alt="img"></font>
+
 <p>​            能出现以上信息，也能表示启动FastDFS的tracker服务启动成功。</p>
 <h2 id="设置-FastDFS-跟踪器开机启动"><a href="#设置-FastDFS-跟踪器开机启动" class="headerlink" title="设置 FastDFS  跟踪器开机启动"></a>设置 FastDFS  跟踪器开机启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.d/rc.local</span><br><span class="line"></span><br><span class="line">#将以下内容填入文件末尾</span><br><span class="line"></span><br><span class="line">## FastDFS Tracker</span><br><span class="line">/etc/init.d/fdfs_trackerd start</span><br></pre></td></tr></table></figure>
 <h1 id="配置FastDFS存储器storage"><a href="#配置FastDFS存储器storage" class="headerlink" title="配置FastDFS存储器storage"></a>配置FastDFS存储器storage</h1><h2 id="修改storage配置文件"><a href="#修改storage配置文件" class="headerlink" title="修改storage配置文件"></a>修改storage配置文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span></span><br><span class="line">cd /etc/fdfs/</span><br><span class="line"><span class="meta">#</span>创建storage配置文件</span><br><span class="line">cp storage.conf.sample storage.conf</span><br><span class="line"><span class="meta">#</span>修改配置文件</span><br><span class="line">vi /etc/fdfs/storage.conf</span><br><span class="line"><span class="meta">#</span>##将文件中的相应项修改为如下内容</span><br><span class="line">disabled=false </span><br><span class="line">group_name=group1</span><br><span class="line">port=23000</span><br><span class="line">base_path=/home/fastdfs/storage</span><br><span class="line">store_path0=/home/fastdfs/storage</span><br><span class="line">store_path_count=1</span><br><span class="line">tracker_server=192.168.1.131:22122#（如果有多个tracker的话，可以在这个配置中填写多个tracker，写法如同现在的写法）</span><br><span class="line">tracker_server=192.168.1.132:22122</span><br><span class="line">http.server_port=8888 #(后续安装的nginx端口需要更改为8888，这样就可以通过nginx服务在web浏览器中查看存储的文件了)</span><br></pre></td></tr></table></figure>
@@ -524,10 +527,12 @@
 <li><p>当然也可以查看下tracker的日志，已经发生了变化，变化如下</p>
 </li>
 </ul>
-<p><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733275092.png" alt="img"></p>
+<font align="left"><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733275092.png" alt="img"></font>
+
 <p>​            方式二：执行命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netstat -unltp|grep fdfs</span><br><span class="line"><span class="meta">#</span>或</span><br><span class="line">ss -ntlp |grep fdfs</span><br></pre></td></tr></table></figure>
-<p>​         <img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733286895.png" alt="img"></p>
+<font align="left"><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733286895.png" alt="img"></font>
+
 <ul>
 <li>能出现以上信息，也能表示启动FastDFS的stroage服务启动成功。</li>
 </ul>
@@ -536,7 +541,8 @@
 <ul>
 <li>使用以上命令，可以看到整个FastDFS集群的storage的分组以及组中storge的个数。如下图</li>
 </ul>
-<p>​        <img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733319392.png" alt="img"></p>
+<font align="left"><img src="https://guoyabing.top/gyabind/images/oss/github/fastdfs/download-1557733319392.png" alt="img"></font>
+
 <h1 id="利用文件上传测试服务安装是否成功"><a href="#利用文件上传测试服务安装是否成功" class="headerlink" title="利用文件上传测试服务安装是否成功"></a>利用文件上传测试服务安装是否成功</h1><h2 id="修改tracker服务器中的客户端配置文件client-conf"><a href="#修改tracker服务器中的客户端配置文件client-conf" class="headerlink" title="修改tracker服务器中的客户端配置文件client.conf"></a>修改tracker服务器中的客户端配置文件client.conf</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>从模板创建配置文件</span><br><span class="line">cp /etc/fdfs/client.conf.sample  /etc/fdfs/client.conf</span><br><span class="line"><span class="meta">#</span>修改配置文件</span><br><span class="line">vi /etc/fdfs/client.conf base_path=/fastdfs/tracker</span><br><span class="line">base_path=/fastdfs/tracker</span><br><span class="line">tracker_server=192.168.1.131:22122</span><br><span class="line">tracker_server=192.168.1.132:22122</span><br></pre></td></tr></table></figure>
 <h2 id="执行命令上传一个文件"><a href="#执行命令上传一个文件" class="headerlink" title="执行命令上传一个文件"></a>执行命令上传一个文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/fdfs_upload_file  /etc/fdfs/client.conf /usr/local/src/FastDFS_v5.05.tar.gz</span><br></pre></td></tr></table></figure>
 <ul>
@@ -744,7 +750,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -755,7 +761,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -766,7 +772,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

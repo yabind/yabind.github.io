@@ -308,6 +308,254 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/NoSQL/Memcached/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yabind">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://guoyabing.top/gyabind/images/oss/github/2019/haizeiwang.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G_Yabind">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/NoSQL/Memcached/" itemprop="url">Memcached</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-12T12:58:24+08:00">
+                2019-06-12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-09T22:25:02+08:00">
+                2019-06-09
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NoSQL/" itemprop="url" rel="index">
+                    <span itemprop="name">NoSQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/NoSQL/Memcached/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/NoSQL/Memcached/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  583
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Memcached介绍"><a href="#Memcached介绍" class="headerlink" title="Memcached介绍"></a>Memcached介绍</h1><ul>
+<li>Memcached是国外社区网站LiveJournal团队开发，目的是为了通过缓存数据库查询结果，减少数据库访问次数，从而提高动态web站点性能</li>
+<li>官网站点：【<a href="http://www.memcached.org" target="_blank" rel="noopener">了解更多</a>】</li>
+<li>数据结构简单 ( k-v ) ，数据存放在内存里</li>
+<li>多线程</li>
+<li>基于C/S架构，协议简单</li>
+<li>基于libevent的事件处理</li>
+<li>自主内存存储处理（slab allowcation）</li>
+<li>数据过期方式：Lazy Expiration 和 LRU</li>
+</ul>
+<h2 id="Memcached的数据流向"><a href="#Memcached的数据流向" class="headerlink" title="Memcached的数据流向"></a>Memcached的数据流向</h2><font align="left"><img src="D:\郭亚兵markdown图片\1560093620453.png" alt="1560093620453"></font>
+
+
+
+<h2 id="Slab-allocation"><a href="#Slab-allocation" class="headerlink" title="Slab allocation"></a>Slab allocation</h2><ul>
+<li>Slab allocation的原理</li>
+<li>将分配的内存分割成各种尺寸的快（chunk），并把尺寸相同的快分成组（chunk的集合），每个chunk集合被称为slab</li>
+<li>Memcached的内存分配以Page为单位，Page默认值为1M，可以在启动是通过 -I 参数来指定</li>
+<li>Slab是由多个Page组成的，Page按照指定大小分割成多个chunk</li>
+</ul>
+<font align="left"><img src="D:\郭亚兵markdown图片\1560093949237.png" alt="1560093949237"></font>
+
+
+
+<h2 id="Growth-factor（决定chunk的大小）"><a href="#Growth-factor（决定chunk的大小）" class="headerlink" title="Growth factor（决定chunk的大小）"></a>Growth factor（决定chunk的大小）</h2><ul>
+<li>Memcached在启动时通过 -f 选项可以指定 Growth Factor因子。该值控制chunk大小的差异。默认值1.25</li>
+<li>通过memcached-tool命令查看指定Memcached实例的不同slab状态，可以看到个ltem所占大小（chunk大小）差距为1.25</li>
+<li>命令：#memcached-tool 127.0.0.1:11211 display</li>
+</ul>
+<h2 id="Mencached的数据过期方式"><a href="#Mencached的数据过期方式" class="headerlink" title="Mencached的数据过期方式"></a>Mencached的数据过期方式</h2><ul>
+<li><p>Lazy Expiration</p>
+<ul>
+<li>Memcached 内部不会监视记录是否会过期，而是在get时查看记录的时间戳，检查记录是否过期。这种技术被称为lazy（惰性）expiration。因此，Memcached不会在过期监视上耗费CPU时间</li>
+</ul>
+</li>
+<li><p>LRU</p>
+<ul>
+<li>Mencached会优先使用已超时的记录空间，但即使如此，也会发生追加新纪录时空间不足的情况，此时就要使用名为Least Recently Used（LRU）机制来分配空间。顾名思义，就是删除“最近最少使用”的记录的机制。因此，当内存空间不足时（无法从slab class获取到新的空间时），就从最近胃被使用的记录中搜索，并将其空间分配给新的记录。丛缓存的实用角度看，该模型十分理想。</li>
+</ul>
+</li>
+</ul>
+<h1 id="Memcached安装"><a href="#Memcached安装" class="headerlink" title="Memcached安装"></a>Memcached安装</h1><ul>
+<li>yum install -y memcached libmemcached libevent</li>
+<li>systemctl start memcached</li>
+<li>vim /etc/sysconfig/memcached 可以配置参数</li>
+<li>比如加上监听的IP，可以把OPTIONS=”” 改为OPTIONS=”127.0.0.1”</li>
+<li>其中-m指定memcached分配内存</li>
+<li>-c指定最大并发数</li>
+<li>-u指定运行memcached服务的用户</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+  
+</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/FastDFS应用/私有化部署-自动化安装FastDFS应用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -355,8 +603,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-12T10:01:43+08:00">
-                2019-06-12
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-17T23:21:49+08:00">
+                2019-06-17
               </time>
             
           </span>
@@ -1579,7 +1827,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1590,7 +1838,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1601,7 +1849,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
